@@ -11,7 +11,7 @@
 <body>
     <form method="POST" action="processamento.php">
         <input type="number" name="inputNum" placeholder="Montante financiado">
-        <input type="number" name="inputNum2" placeholder="Juros financiamento">
+        <input type="text" name="inputNum2" placeholder="Juros financiamento">
         <input type="number" name="inputNum3" placeholder="Parcela">
         <input type="submit" value="Calcular">
     </form>
