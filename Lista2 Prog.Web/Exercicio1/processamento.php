@@ -24,8 +24,19 @@
             $this->altura = $altura;
         }
 
-        public function calcA($altura, $largura){
-            $this->area = $altura * $largura;
+        public function calcA(){
+            return $this->altura * $this->largura;
+        }
+
+        public function calcP(){
+            return 2*($this->altura + $this->largura);
+        }
+
+        public function isQuad(){
+            if($this->largura==$this->altura)
+                return "É quadrado";
+            else
+                return "Não é quadrado";
         }
     }
 ?>

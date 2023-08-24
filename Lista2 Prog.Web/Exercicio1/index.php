@@ -16,10 +16,15 @@
         <input type="submit" value="Calcular">
     </form>
     <?php
-        $r->setLargura($_POST['larg']);
-        $r->setAltura($_POST['alt']);
-        echo $r->getLargura() . '<br>';
-        echo $r->getAltura();
+        if(isset($_POST['larg']) && isset($_POST['alt'])){
+            $r->setLargura($_POST['larg']);
+            $r->setAltura($_POST['alt']);
+            echo "Largura = " . $r->getLargura() . '<br>';
+            echo "Altura = " . $r->getAltura() . '<br>';
+            echo "Área = " . $r->calcA() . '<br>';
+            echo "Perímetro = " . $r->calcP() . '<br>';
+            echo $r->isQuad();
+        }
     ?>
 </body>
 </html>
