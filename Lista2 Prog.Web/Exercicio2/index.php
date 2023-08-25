@@ -14,7 +14,6 @@
         <input type="submit" value="Calcular">
     </form>
     <?php
-        if(isset($_POST['alt'])){
             $c->soma(5);
             echo "Resultado da soma = " . $c->getRes() . '<br>';
             $c->subtrai(2);
@@ -35,7 +34,6 @@
             echo "Resultado da raiz = " . $c->getRes() . '<br>';
             $c->zerar();
             echo "Resultado zerado = " . $c->getRes() . '<br>';
-        }
     ?>
 </body>
 </html>
