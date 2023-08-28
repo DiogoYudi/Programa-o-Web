@@ -49,19 +49,33 @@
         public function getDate(){
             $datetime = new DateTime();
             $datetime->setDate($this->year,$this->month,$this->day);
-            echo $datetime->format('d/m/Y');
+            return $datetime->format('d/m/Y');
         }
 
         public function bissexto(){
-            if($this->year/4==0 && $this->year/100!=0 && $this->year/400==0)
+            if(($this->year/4==0 && $this->year/100!=0) || $this->year%400==0)
                 echo "É um ano bissexto";
             else
                 echo "Não é um ano bissexto";
         }
 
-        ##public function dayDay($day){
-        ##    $interval = $day->diff($this->day);
-        ##    return $interval->days;
-        ##}
+        public function diffYears($date){
+            $datetime = new DateTime("$this->day-$this->month-$this->year");
+            $datetime2 = new DateTime($date);
+            $interval = $datetime->diff($datetime2);
+
+            return $interval->days;
+        }
+
+        public function compareDate($date){
+            $datetime = new DateTime("$this->day-$this->month-$this->year");
+            $datetime2 = new DateTime($date);
+            if($datetime == $datetime2)
+                return 0;
+            else if($datetime>$datetime2)
+                return 1;
+            else
+                return -1;
+        }
     }
 ?>
