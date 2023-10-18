@@ -16,15 +16,15 @@
 
         echo "<h2>Clientes</h2>";
         foreach($clientes as $cli){
-            echo $cli['codigo']."-".$cli['nome']."-".$cli['telefone']."<br>";
+            echo $cli['codigo']."-".$cli['nome']."-".$cli['telefone']."<a href='editarCliente.php?id=".$cli['codigo']."'>[alterar]</a>"."<a href='excluirCliente.php?id=".$cli['codigo']."'>[excluir]</a>"."<br>";
         }
     ?>
     <form action="adicionarcliente.php" method="POST">
-        <label for="codigo"></label>
+        <label for="codigo">Código</label>
         <input type="text" name="codigo" id="codigo" required><br>
-        <label for="nome"></label>
+        <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" required><br>
-        <label for="telefone"></label>
+        <label for="telefone">Telefone</label>
         <input type="text" name="telefone" id="telefone" required><br>
         <input type="submit" value="Adicionar" name="adicionar">
     </form>

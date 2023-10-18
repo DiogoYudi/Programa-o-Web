@@ -4,7 +4,7 @@
 
         function __construct(){
             try{
-                $this->$conexao = new PDO("mysql:host=localhost;dbname=sistemaERP","root","");
+                $this->conexao = new PDO("mysql:host=localhost;dbname=sistemaERP","root","");
                 $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
             catch (PDOException $e){
@@ -29,13 +29,13 @@
                 $acesso->execute();
                 return true;
             }
-            catch(PDO EXception $e){
+            catch(PDOException $e){
                 die("Erro ao executar o comando SQL: ".$e->getMessage());
             }
         } 
     }
 
-    $banco = new ConexaoBD();
-    $resultados = $banco->executaSQL("select * from clientes");
-    $banco->executaComando("insert into clientes values (10,'CCC','4718742')")
+    #$banco = new ConexaoBD();
+    #$resultados = $banco->executaSQL("select * from clientes");
+    #$banco->executaComando("insert into clientes values (10,'CCC','4718742')")
 ?>
