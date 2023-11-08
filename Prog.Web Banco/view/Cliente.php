@@ -11,23 +11,23 @@
         <?php
         foreach($clientes as $cli){ ?>
             <li><?php echo $cli['nome'] ?> - <?=$cli['codigo']?> - <?=$cli['telefone']?>
-                <a href='editarUsuario.php?id=<?=$cli['codigo']?>'> [alterar] </a>
-                <a href='excluirUsuario.php?id=<?=$cli['codigo']?>'> [alterar] </a>
+                <a href='../view/AlterarCliente.php?codigo=<?=$cli['codigo']?>'> [alterar] </a>
+                <a href='../view/DeletarCliente.php?codigo=<?=$cli['codigo']?>'> [deletar] </a>
             </li>
         <?php
         }
         ?>
     </ul>
 
-    <h2>Adicionar Novo Usuário</h2>
-    <form action="adicionarUsuario.php" method="POST">
+    <h2>Adicionar Novo Cliente</h2>
+    <form action="../view/index.php" method="POST">
         <label for="codigo">Código:</label>
         <input type="text" name="codigo" id="codigo" required><br>
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" required><br>
         <label for="telefone">Telefone:</label>
         <input type="text" name="telefone" id="telefone" required><br>
-        <button type="submit">Adicionar Usuário</button>
+        <input type="submit" name="submit" id="submit" value="adicionar">Adicionar Cliente</button>
     </form>
 </body>
 </html>
